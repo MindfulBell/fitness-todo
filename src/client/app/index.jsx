@@ -1,30 +1,13 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {render} from 'react-dom';
 require("../public/css/style.scss");
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import reducers from './reducers';
+import App from './components/app';
 
-/*
 
-Boilerplate for any react project w/redux, sass, bootstrap installed
-Please don't forget to change your remote origin!!!
-
-*/
-
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-     
-    };
-  }
-
-  render() {
-    return (
-      <div>
-        <h1> INSERT APP HERE!</h1>
-      </div>
-    );
-  }
-}
-
-render(
-  <App/>, document.getElementById('app'));
+render(<Provider store={createStore(reducers)}>
+        <App />
+      </Provider>
+  , document.getElementById('app'));

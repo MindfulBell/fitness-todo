@@ -1,7 +1,7 @@
 {
-  "name": "react-redux-boilerplate",
+  "name": "workout-todo-list",
   "version": "1.0.0",
-  "description": "template for all React apps",
+  "description": "play on todo list with exercises",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
