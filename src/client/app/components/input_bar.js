@@ -7,10 +7,11 @@ class InputBar extends Component {
 	constructor(props){
 		super(props)
 
-		this.state = {term: ''}
+		this.state = {term: '', sets: ''}
 
 		this.onInputChange = this.onInputChange.bind(this);
 		this.onButtonSubmit = this.onButtonSubmit.bind(this);
+		this.onSetChange = this.onSetChange.bind(this);
 	}
 
 	onInputChange(event){
@@ -19,13 +20,20 @@ class InputBar extends Component {
 		})
 	}
 
+	onSetChange(event){
+		this.setState({
+			sets: event.target.value
+		})
+	}
+
 	onButtonSubmit(){
 		event.preventDefault();
 
-		this.props.addExercise(this.state.term)
+		this.props.addExercise(this.state.term, this.state.sets)
 
 		this.setState({
-			term: ''
+			term: '',
+			sets: ''
 		})
 
 		//function to add exercise to list
@@ -35,13 +43,19 @@ class InputBar extends Component {
 	render(){
 
 		return(
-			<div className='container' style={{width: '100%', textAlign: 'center'}}>
+			<div className='container' style={{width: '60%', textAlign: 'center'}}>
 				<form className='input-group' style={{width: '100%'}}>
 					<input className='form-control input-lg'
 					type='text'
 					value={this.state.term}
 					placeholder='Type an exercise to add to your workout...'
 					onChange={this.onInputChange}
+					/>
+					<input className='form-control input-lg'
+					type='text'
+					value={this.state.sets}
+					placeholder='How many sets?'
+					onChange={this.onSetChange}
 					/>
 				</form>		
 				<button className='btn btn-lg'

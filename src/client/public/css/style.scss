@@ -10,13 +10,20 @@
 	&:focus, &:active {
 		outline: 0;
 	}
-	margin: 0 0 25px 0;
 }
 
 .table {
 	width: 100%
 }
-
-	th {
+th {
 		text-align: justify;
 	}
+
+input {
+	margin: 10px;
+}
+
+i {
+	padding: 0 20px 0 20px;
+	cursor: pointer;
+}
