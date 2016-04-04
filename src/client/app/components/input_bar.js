@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addExercise } from '../actions/add_exercise';
+import { addExercise } from '../actions/index';
 import { bindActionCreators } from 'redux';
 
 class InputBar extends Component {
