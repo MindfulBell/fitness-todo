@@ -13,7 +13,8 @@ class ExerciseList extends Component {
 	constructor(props){
 		super(props)
 		this.state={
-			formVideos: []
+			formVideos: [],
+			selectedVideo: null
 		}
 	}
 	onToggle(event){
@@ -27,11 +28,6 @@ class ExerciseList extends Component {
 
 	onVideoSearch(term){
 		// click on video icon next to exercise, query youtube, bring up vids
-		YTSearch({key: API_KEY, term: term}, (data)=>{
-			this.setState({
-				formVideos: data
-			})
-		})
 	}
 
 	render() {
@@ -40,16 +36,16 @@ class ExerciseList extends Component {
 			<tr key={ind} id={ind} style={data.complete === true ? 
 				{backgroundColor: 'lightblue', textDecoration: 'line-through'}:{}}>
 				<td>
-				{data.exercise}
-				<i style={{color: 'blue'}} 
-						id='form'
-						className="fa fa-2x fa-video-camera" 
-						onClick={this.onVideoSearch.bind(this)}>
+					<p>{data.exercise}
+						<i style={{color: 'blue', float: 'right'}} 
+						 id='form'
+						 className="fa fa-2x fa-video-camera" 
+						 onClick={this.onVideoSearch}>
 						</i>
-				
-
+					</p>
+					
 				</td>
-				<td>{data.sets}</td>
+				<td><p>{data.sets}</p></td>
 				<td>
 						<i style={{color: 'green'}} 
 						id='complete'
@@ -78,10 +74,10 @@ class ExerciseList extends Component {
 				</td>
 			</tr>
 			)
-		});
+		});		
 
-		return(
-			<div className='container' style={{width: '60%', paddingTop: '25px'}}>
+		return(	
+			<div className='container' style={{width: '60%', paddingTop: '25px'}}>				
 				<table className='table table-hover'>
 					<thead>
 						<tr>
@@ -94,9 +90,6 @@ class ExerciseList extends Component {
 						{exerciseGroup}
 					</tbody>
 				</table>
-				<div>
-
-				</div>
 			</div>
 
 		)

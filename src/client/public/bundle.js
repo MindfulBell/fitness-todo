@@ -12158,7 +12158,8 @@
 			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ExerciseList).call(this, props));
 	
 			_this.state = {
-				formVideos: []
+				formVideos: [],
+				selectedVideo: null
 			};
 			return _this;
 		}
@@ -12174,19 +12175,12 @@
 		}, {
 			key: 'onVideoSearch',
 			value: function onVideoSearch(term) {
-				var _this2 = this;
-	
 				// click on video icon next to exercise, query youtube, bring up vids
-				(0, _youtubeApiSearch2.default)({ key: API_KEY, term: term }, function (data) {
-					_this2.setState({
-						formVideos: data
-					});
-				});
 			}
 		}, {
 			key: 'render',
 			value: function render() {
-				var _this3 = this;
+				var _this2 = this;
 	
 				var exerciseGroup = this.props.exercises.map(function (data, ind) {
 					return _react2.default.createElement(
@@ -12195,16 +12189,24 @@
 						_react2.default.createElement(
 							'td',
 							null,
-							data.exercise,
-							_react2.default.createElement('i', { style: { color: 'blue' },
-								id: 'form',
-								className: 'fa fa-2x fa-video-camera',
-								onClick: _this3.onVideoSearch.bind(_this3) })
+							_react2.default.createElement(
+								'p',
+								null,
+								data.exercise,
+								_react2.default.createElement('i', { style: { color: 'blue', float: 'right' },
+									id: 'form',
+									className: 'fa fa-2x fa-video-camera',
+									onClick: _this2.onVideoSearch })
+							)
 						),
 						_react2.default.createElement(
 							'td',
 							null,
-							data.sets
+							_react2.default.createElement(
+								'p',
+								null,
+								data.sets
+							)
 						),
 						_react2.default.createElement(
 							'td',
@@ -12212,12 +12214,12 @@
 							_react2.default.createElement('i', { style: { color: 'green' },
 								id: 'complete',
 								className: 'fa fa-2x fa-check-circle-o',
-								onClick: _this3.onToggle.bind(_this3) }),
+								onClick: _this2.onToggle.bind(_this2) }),
 							_react2.default.createElement('i', {
 								style: data.complete === true ? { opacity: '0' } : { color: 'red' },
 								id: 'remove',
 								className: 'fa fa-2x fa-times',
-								onClick: _this3.onToggle.bind(_this3) }),
+								onClick: _this2.onToggle.bind(_this2) }),
 							_react2.default.createElement(
 								'i',
 								{
@@ -12265,8 +12267,7 @@
 							null,
 							exerciseGroup
 						)
-					),
-					_react2.default.createElement('div', null)
+					)
 				);
 			}
 		}]);
@@ -12373,7 +12374,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".btn {\n  background-color: green;\n  color: white;\n  transition: all .5s ease; }\n  .btn:hover {\n    background-color: white;\n    border: 1px solid green;\n    color: green; }\n  .btn:focus, .btn:active {\n    outline: 0; }\n\n.table {\n  width: 100%; }\n\nth {\n  text-align: justify; }\n\ninput {\n  margin: 10px; }\n\ni {\n  padding: 0 20px 0 20px;\n  cursor: pointer;\n  transition: all .5s ease; }\n", ""]);
+	exports.push([module.id, ".btn {\n  color: white;\n  transition: all .5s ease; }\n  .btn:hover {\n    background-color: white;\n    border: 1px solid green;\n    color: green; }\n  .btn:focus, .btn:active {\n    outline: 0; }\n\n.table {\n  width: 100%;\n  font-size: 1.2em;\n  vertical-align: middle; }\n\nth {\n  text-align: justify; }\n\ninput {\n  margin: 10px; }\n\ni {\n  padding: 0 20px 0 20px;\n  cursor: pointer;\n  transition: all .5s ease;\n  font-size: 1em;\n  margin: 0 auto; }\n\np {\n  display: inline-block; }\n", ""]);
 	
 	// exports
 
