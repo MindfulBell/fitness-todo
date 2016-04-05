@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import { removeExercise } from '../actions/index';
 import { completeExercise } from '../actions/index';
 import { bindActionCreators } from 'redux';
-import YTSearch from 'youtube-api-search';
+import axios from 'axios';
 const API_KEY = 'AIzaSyCNU9dpBdkTFsPHxgEkVehkPqz_V0innwc'
+
 
 
 
@@ -26,20 +27,19 @@ class ExerciseList extends Component {
 	}
 
 	onVideoSearch(term){
+		const searchTerm = `${term} form`;
+		const URL = `https://www.googleapis.com/youtube/v3/search?part=snippet&
+		q=${searchTerm}&type=video&videoEmbeddable=true&key=${API_KEY}`;
 		// make a request to Youtube with the term, pull out the id, and move it to state
 		// click on video icon next to exercise, query youtube, bring up vids
+		axios.get(URL).then((response)=>{
+			this.setState({
+				videoId: response.data.items[0].id.videoId
+			})
+		})
+		
+		// ?? Better way to get the exercise name below in the function call?? 
 
-		// query YouTube with the term
-
-		// get back the top match and it's id
-
-		// put id in state
-
-		// this.setState({
-		// 	videoId:  _____
-		// })
-
-		//how do i change size of the video player below?
 	}
 
 	render() {
@@ -51,38 +51,38 @@ class ExerciseList extends Component {
 			<tr key={ind} id={ind} style={data.complete === true ? 
 				{backgroundColor: 'lightblue', textDecoration: 'line-through'}:{}}>
 				<td>
-					<p>{data.exercise}
-						<i
-						 id='form'
-						 className="fa fa-video-camera" 
-						 onClick={this.onVideoSearch}>
-						</i>
+					<p id='exerciseName'>{data.exercise}
 					</p>
+					<i
+					id='form'
+					className="pointers fa fa-2x fa-television" 
+					onClick={(event) => {this.onVideoSearch(event.target.previousSibling.innerHTML)}}>
+					</i>
 					
 				</td>
 				<td><p>{data.sets}</p></td>
 				<td>
 						<i
 						id='complete'
-						className="fa fa-check-circle-o" 
+						className="pointers fa fa-2x fa-check-circle-o" 
 						onClick={this.onToggle.bind(this)}>
 						</i>
-
+						
 						<i 
 						style={data.complete === true ? 
 						{opacity: '0'} 
 						: {}} 
 						id='remove'
-						className="fa fa-times" 
+						className="pointers fa fa-2x fa-times-circle-o" 
 						onClick={this.onToggle.bind(this)}>
 						</i>
 
 						<i 
 						style={data.complete === true ? 
 						{opacity: '1',
-						 float: 'right'} 
+						 float: 'left'} 
 						: {opacity: '0'}} 
-						className="fa fa-thumbs-up">
+						className="fa fa-2x fa-thumbs-up">
 						&nbsp;Great Job!
 						</i>
 				</td>
@@ -91,22 +91,28 @@ class ExerciseList extends Component {
 		});		
 
 		return(	
-			<div className='container' style={{width: '60%', paddingTop: '25px'}}>
-			<div className='embed-responsive embed-responsive-16by9'>
-				<iframe className= 'embed-responsive-item' src={url}></iframe>
-			</div>				
-				<table className='table table-hover'>
-					<thead>
-						<tr>
-							<th>Exercise Name</th>
-							<th>Sets</th>
-							<th>Complete / Remove</th>
-						</tr>
-					</thead>
-					<tbody>
-						{exerciseGroup}
-					</tbody>
-				</table>
+			<div className='container' style={{width: '100%', paddingTop: '25px'}}>
+				<div className='row' style={{paddingBottom: '25px'}}>
+					<div className='col-md-8 col-md-offset-2'>
+						<div className='embed-responsive embed-responsive-16by9'>
+							<iframe className= 'embed-responsive-item' src={url}></iframe>
+						</div>
+					</div>
+				</div>
+				<div className='table-responsive'>
+					<table className='table table-bordered'>
+						<thead>
+							<tr>
+								<th>Exercise</th>
+								<th>Sets</th>
+								<th style={{float: 'right'}}>Completed?</th>
+							</tr>
+						</thead>
+						<tbody>
+							{exerciseGroup}
+						</tbody>
+					</table>
+				</div>
 			</div>
 
 		)
@@ -126,5 +132,3 @@ function mapDispatchToProps(dispatch){
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ExerciseList);
-
-// left off: markComplete function (make it part of state?), add youTube vids!, styling!

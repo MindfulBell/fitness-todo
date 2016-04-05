@@ -1,3 +1,36 @@
+.table {
+	width: 100%;
+	td {
+		vertical-align: middle;
+	}
+}
+
+input {
+	margin: 10px;
+}
+
+
+p {
+	display: inline-block;
+	margin-bottom: 0;
+	vertical-align: middle;
+}
+
+.pointers {
+	cursor: pointer;
+}
+
+
+/* ICON + BUTTON STYLE */
+
+i {
+	padding: 0 5px 0 5px;
+	transition: all .5s ease;
+	margin: 0 auto;
+	float: right;
+	vertical-align: middle;
+}
+
 .btn {
 	color: white;
 	transition: all .5s ease;
@@ -11,27 +44,4 @@
 	}
 }
 
-.table {
-	width: 100%;
-	font-size: 1.2em;
-	vertical-align: middle;
-}
-th {
-		text-align: justify;
-	}
 
-input {
-	margin: 10px;
-}
-
-i {
-	padding: 0 20px 0 20px;
-	cursor: pointer;
-	transition: all .5s ease;
-	font-size: 1em;
-	margin: 0 auto;
-}
-
-p {
-	display: inline-block;
-}
