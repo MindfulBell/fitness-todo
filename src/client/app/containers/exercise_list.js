@@ -13,8 +13,7 @@ class ExerciseList extends Component {
 	constructor(props){
 		super(props)
 		this.state={
-			formVideos: [],
-			selectedVideo: null
+			videoId: ''
 		}
 	}
 	onToggle(event){
@@ -27,19 +26,35 @@ class ExerciseList extends Component {
 	}
 
 	onVideoSearch(term){
+		// make a request to Youtube with the term, pull out the id, and move it to state
 		// click on video icon next to exercise, query youtube, bring up vids
+
+		// query YouTube with the term
+
+		// get back the top match and it's id
+
+		// put id in state
+
+		// this.setState({
+		// 	videoId:  _____
+		// })
+
+		//how do i change size of the video player below?
 	}
 
 	render() {
+		const id = this.state.videoId;
+		const url = `https://www.youtube.com/embed/${id}`;
+
 		const exerciseGroup = this.props.exercises.map((data, ind) => {		
 			return (
 			<tr key={ind} id={ind} style={data.complete === true ? 
 				{backgroundColor: 'lightblue', textDecoration: 'line-through'}:{}}>
 				<td>
 					<p>{data.exercise}
-						<i style={{color: 'blue', float: 'right'}} 
+						<i
 						 id='form'
-						 className="fa fa-2x fa-video-camera" 
+						 className="fa fa-video-camera" 
 						 onClick={this.onVideoSearch}>
 						</i>
 					</p>
@@ -47,29 +62,28 @@ class ExerciseList extends Component {
 				</td>
 				<td><p>{data.sets}</p></td>
 				<td>
-						<i style={{color: 'green'}} 
+						<i
 						id='complete'
-						className="fa fa-2x fa-check-circle-o" 
+						className="fa fa-check-circle-o" 
 						onClick={this.onToggle.bind(this)}>
 						</i>
 
 						<i 
 						style={data.complete === true ? 
 						{opacity: '0'} 
-						: {color: 'red'}} 
+						: {}} 
 						id='remove'
-						className="fa fa-2x fa-times" 
+						className="fa fa-times" 
 						onClick={this.onToggle.bind(this)}>
 						</i>
 
 						<i 
 						style={data.complete === true ? 
 						{opacity: '1',
-						 color: 'blue',
 						 float: 'right'} 
 						: {opacity: '0'}} 
-						className="fa fa-2x fa-thumbs-up">
-						&nbsp;&nbsp;Great Job!
+						className="fa fa-thumbs-up">
+						&nbsp;Great Job!
 						</i>
 				</td>
 			</tr>
@@ -77,7 +91,10 @@ class ExerciseList extends Component {
 		});		
 
 		return(	
-			<div className='container' style={{width: '60%', paddingTop: '25px'}}>				
+			<div className='container' style={{width: '60%', paddingTop: '25px'}}>
+			<div className='embed-responsive embed-responsive-16by9'>
+				<iframe className= 'embed-responsive-item' src={url}></iframe>
+			</div>				
 				<table className='table table-hover'>
 					<thead>
 						<tr>

@@ -12158,8 +12158,7 @@
 			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ExerciseList).call(this, props));
 	
 			_this.state = {
-				formVideos: [],
-				selectedVideo: null
+				videoId: ''
 			};
 			return _this;
 		}
@@ -12175,12 +12174,26 @@
 		}, {
 			key: 'onVideoSearch',
 			value: function onVideoSearch(term) {
+				// make a request to Youtube with the term, pull out the id, and move it to state
 				// click on video icon next to exercise, query youtube, bring up vids
+	
+				// query YouTube with the term
+	
+				// get back the top match and it's id
+	
+				// put id in state
+	
+				// this.setState({
+				// 	videoId:  _____
+				// })
 			}
 		}, {
 			key: 'render',
 			value: function render() {
 				var _this2 = this;
+	
+				var id = this.state.videoId;
+				var url = 'https://www.youtube.com/embed/' + id;
 	
 				var exerciseGroup = this.props.exercises.map(function (data, ind) {
 					return _react2.default.createElement(
@@ -12193,9 +12206,9 @@
 								'p',
 								null,
 								data.exercise,
-								_react2.default.createElement('i', { style: { color: 'blue', float: 'right' },
+								_react2.default.createElement('i', {
 									id: 'form',
-									className: 'fa fa-2x fa-video-camera',
+									className: 'fa fa-video-camera',
 									onClick: _this2.onVideoSearch })
 							)
 						),
@@ -12211,23 +12224,22 @@
 						_react2.default.createElement(
 							'td',
 							null,
-							_react2.default.createElement('i', { style: { color: 'green' },
+							_react2.default.createElement('i', {
 								id: 'complete',
-								className: 'fa fa-2x fa-check-circle-o',
+								className: 'fa fa-check-circle-o',
 								onClick: _this2.onToggle.bind(_this2) }),
 							_react2.default.createElement('i', {
-								style: data.complete === true ? { opacity: '0' } : { color: 'red' },
+								style: data.complete === true ? { opacity: '0' } : {},
 								id: 'remove',
-								className: 'fa fa-2x fa-times',
+								className: 'fa fa-times',
 								onClick: _this2.onToggle.bind(_this2) }),
 							_react2.default.createElement(
 								'i',
 								{
 									style: data.complete === true ? { opacity: '1',
-										color: 'blue',
 										float: 'right' } : { opacity: '0' },
-									className: 'fa fa-2x fa-thumbs-up' },
-								'  Great Job!'
+									className: 'fa fa-thumbs-up' },
+								' Great Job!'
 							)
 						)
 					);
@@ -12236,6 +12248,11 @@
 				return _react2.default.createElement(
 					'div',
 					{ className: 'container', style: { width: '60%', paddingTop: '25px' } },
+					_react2.default.createElement(
+						'div',
+						{ className: 'embed-responsive embed-responsive-16by9' },
+						_react2.default.createElement('iframe', { className: 'embed-responsive-item', src: url })
+					),
 					_react2.default.createElement(
 						'table',
 						{ className: 'table table-hover' },
