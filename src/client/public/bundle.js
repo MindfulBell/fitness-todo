@@ -13096,7 +13096,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".table {\n  width: 100%; }\n  .table td {\n    vertical-align: middle; }\n\ninput {\n  margin: 10px; }\n\np {\n  display: inline-block;\n  margin-bottom: 0;\n  vertical-align: middle; }\n\n.pointers {\n  cursor: pointer; }\n\n/* ICON + BUTTON STYLE */\ni {\n  padding: 0 5px 0 5px;\n  transition: all .5s ease;\n  margin: 0 auto;\n  float: right;\n  vertical-align: middle; }\n\n.btn {\n  color: white;\n  transition: all .5s ease; }\n  .btn:hover {\n    background-color: white;\n    border: 1px solid green;\n    color: green; }\n  .btn:focus, .btn:active {\n    outline: 0; }\n", ""]);
+	exports.push([module.id, "input {\n  margin: 10px; }\n\n.table {\n  width: 100%; }\n  .table thead tr th {\n    font-size: 1.5em; }\n  .table td {\n    vertical-align: middle; }\n\np {\n  display: inline-block;\n  margin-bottom: 0;\n  vertical-align: middle; }\n\n/* ICON + BUTTON STYLE */\ni {\n  padding: 0 5px 0 5px;\n  transition: all .5s ease;\n  margin: 0 auto;\n  float: right;\n  vertical-align: middle; }\n\n.btn {\n  color: white;\n  transition: all .5s ease; }\n  .btn:hover {\n    background-color: white;\n    border: 1px solid green;\n    color: green; }\n  .btn:focus, .btn:active {\n    outline: 0; }\n\n.pointers {\n  cursor: pointer; }\n", ""]);
 	
 	// exports
 

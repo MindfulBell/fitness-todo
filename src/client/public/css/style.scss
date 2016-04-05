@@ -1,23 +1,25 @@
+input {
+	margin: 10px;
+}
+
 .table {
 	width: 100%;
+	thead {
+		tr {
+			th{
+				font-size: 1.5em;
+			}
+		}
+	}
 	td {
 		vertical-align: middle;
 	}
 }
 
-input {
-	margin: 10px;
-}
-
-
 p {
 	display: inline-block;
 	margin-bottom: 0;
 	vertical-align: middle;
-}
-
-.pointers {
-	cursor: pointer;
 }
 
 
@@ -42,6 +44,11 @@ i {
 	&:focus, &:active {
 		outline: 0;
 	}
+}
+
+
+.pointers {
+	cursor: pointer;
 }
 
 
