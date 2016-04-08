@@ -7,9 +7,6 @@ import axios from 'axios';
 const API_KEY = 'AIzaSyCNU9dpBdkTFsPHxgEkVehkPqz_V0innwc'
 
 
-
-
-
 class ExerciseList extends Component {	
 	constructor(props){
 		super(props)
@@ -49,7 +46,7 @@ class ExerciseList extends Component {
 		const exerciseGroup = this.props.exercises.map((data, ind) => {		
 			return (
 			<tr key={ind} id={ind} style={data.complete === true ? 
-				{backgroundColor: 'lightblue', textDecoration: 'line-through'}:{}}>
+				{backgroundColor: '#509C44', textDecoration: 'line-through'}:{}}>
 				<td>
 					<p id='exerciseName'>{data.exercise}
 					</p>
@@ -90,22 +87,15 @@ class ExerciseList extends Component {
 			)
 		});		
 
-		return(	
-			<div className='container' style={{width: '100%', paddingTop: '25px'}}>
-				<div className='row' style={{paddingBottom: '25px'}}>
-					<div className='col-md-8 col-md-offset-2'>
-						<div className='embed-responsive embed-responsive-16by9'>
-							<iframe className= 'embed-responsive-item' src={url}></iframe>
-						</div>
-					</div>
-				</div>
+		return(
+			<div className='container' style={{width: '60%', paddingTop: '25px'}}>
 				<div className='table-responsive'>
 					<table className='table table-bordered'>
 						<thead>
 							<tr>
 								<th>Exercise</th>
 								<th>Sets</th>
-								<th style={{float: 'right'}}>Completed?</th>
+								<th style={{float: 'right', border: 'none'}}>Completed?</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -113,8 +103,14 @@ class ExerciseList extends Component {
 						</tbody>
 					</table>
 				</div>
+				<div className='row' style={{padding:'75px 0'}}>
+					<div className='vidHolder col-md-8 col-md-offset-2'>
+						<div className='embed-responsive embed-responsive-16by9'>
+							<iframe className= 'embed-responsive-item' src={url}></iframe>
+						</div>
+					</div>
+				</div>				
 			</div>
-
 		)
 	}
 }

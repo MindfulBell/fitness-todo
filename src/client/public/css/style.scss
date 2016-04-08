@@ -1,17 +1,49 @@
+$blue: #345889;
+$orange: #F7CB30;
+$fontstack: 'Exo 2', sans-serif;
+
+body {
+	background-color: $blue;
+	font-family: $fontstack;
+}
+
+.jumbotron {
+	background-image: url('https://pixabay.com/get/e834b30921fd083ed1584d05fb0938c9bd22ffd41db711419df8c171ae/cross-fit-1126999_1280.jpg');
+	background-size: cover;
+	height: 350px;
+	color: white;
+	text-align: center;
+	h5 {
+		padding-bottom: 50px;
+		border-bottom: 2px solid $orange;
+	}
+}
+
 input {
 	margin: 10px;
+	&:focus {
+		box-shadow: 0 0 6px white;
+	}
+}
+
+.vidHolder {
+	box-shadow: 0px 0px 12px white;
+	padding: 0px;
 }
 
 .table {
+	box-shadow: 0px 0px 12px white;
 	width: 100%;
 	thead {
 		tr {
 			th{
 				font-size: 1.5em;
+				color: white;
 			}
 		}
 	}
 	td {
+		color: white;
 		vertical-align: middle;
 	}
 }
@@ -34,12 +66,15 @@ i {
 }
 
 .btn {
-	color: white;
+
+	background-color: $blue;
+	color: $orange;
+	border: 1px solid $orange;
 	transition: all .5s ease;
 	&:hover {
 		background-color: white;
-		border: 1px solid green;
-		color: green;
+		border: 1px solid $blue;
+		color: $blue;
 	}
 	&:focus, &:active {
 		outline: 0;

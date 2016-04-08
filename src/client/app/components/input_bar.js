@@ -43,7 +43,7 @@ class InputBar extends Component {
 	render(){
 
 		return(
-			<div className='container' style={{width: '80%', textAlign: 'center'}}>
+			<div className='container' style={{width: '20%', textAlign: 'center'}}>
 				<form className='input-group' style={{width: '100%'}}>
 					<input className='form-control input-lg'
 					type='text'
