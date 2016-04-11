@@ -39,7 +39,7 @@ class ExerciseList extends Component {
 		// 	videoId:  _____
 		// })
 
-		//how do i change size of the video player below?
+		//how do i change size of the video player below? add a col-md-8 row around it!
 	}
 
 	render() {
