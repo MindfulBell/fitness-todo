@@ -1,4 +1,4 @@
-This is a boiler plate setup that has React, redux, Bootstrap, and SASS.
+###Fitness To-Do 
 
-
+####First attempt at using Redux/react-redux, didn't want to do plain old to-do!
 

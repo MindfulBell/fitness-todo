@@ -5,11 +5,11 @@ import { COMPLETE_EXERCISE } from '../actions/index';
 export default function (state = [], action) {
 	switch(action.type) {
 		case ADD_EXERCISE: 
-			return [{
+			return [...state, {
 				exercise: action.exercise, 
 				sets: action.sets, 
-				complete: action.complete}, 
-				...state]
+				complete: action.complete}
+				]
 
 		case REMOVE_EXERCISE:
 			return state.filter((_, ind) => {
