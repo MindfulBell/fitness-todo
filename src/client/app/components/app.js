@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 require("../../public/css/style.scss");
 
-import InputBar from './input_bar';
-import ExerciseList from '../containers/exercise_list';
+import InputBar from '../containers/input_bar';
+import ContainerExerciseList from '../containers/container_exercise_list';
 
 
 export default class App extends Component {
@@ -11,7 +11,7 @@ export default class App extends Component {
     return (
       <div>
         <InputBar />
-        <ExerciseList />
+        <ContainerExerciseList />
       </div>
     );
   }

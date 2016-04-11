@@ -1,6 +1,3 @@
-
-
-
 export const ADD_EXERCISE = 'ADD_EXERCISE'
 export function addExercise(exercise, sets){
 	return {
@@ -8,7 +5,7 @@ export function addExercise(exercise, sets){
 		exercise: exercise,
 		sets: sets,
 		complete: false,
-		form: [] // this is where I will put 3 videos from youTube of proper form
+		form: []
 	};
 }
 
