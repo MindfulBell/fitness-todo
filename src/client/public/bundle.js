@@ -12925,7 +12925,7 @@
 	
 		return _react2.default.createElement(
 			'div',
-			{ className: 'row', style: { padding: '75px 0', textAlign: 'center' } },
+			{ style: { padding: '75px 0', textAlign: 'center' } },
 			_react2.default.createElement(
 				'h3',
 				{ style: { color: 'white' } },
@@ -12933,7 +12933,7 @@
 			),
 			_react2.default.createElement(
 				'div',
-				{ className: 'vidHolder col-md-6 col-md-offset-3' },
+				{ className: 'vidHolder' },
 				_react2.default.createElement(
 					'div',
 					{ className: 'embed-responsive embed-responsive-16by9' },
@@ -13185,7 +13185,7 @@
 	
 	
 	// module
-	exports.push([module.id, "body {\n  background-color: #345889;\n  font-family: \"Exo 2\", sans-serif; }\n\n.jumbotron {\n  background-color: #F7CB30;\n  background-size: cover;\n  background-attachment: fixed;\n  width: 100%;\n  height: 350px;\n  color: white;\n  text-align: center;\n  text-shadow: -2px 2px 6px black; }\n  .jumbotron h1 {\n    font-size: 5em; }\n  .jumbotron h3 {\n    padding-bottom: 30px;\n    border-bottom: 2px solid #345889; }\n\n#app {\n  background-color: #345889;\n  position: absolute;\n  width: 100%;\n  height: 100%; }\n\ninput {\n  margin: 10px 0px; }\n  input:focus {\n    box-shadow: 0 0 6px white; }\n\n.vidHolder {\n  box-shadow: 0px 0px 12px white;\n  padding: 0px; }\n\n.table {\n  width: 100%; }\n  .table thead tr th {\n    font-size: 1.3em;\n    color: white; }\n  .table td {\n    color: white;\n    vertical-align: middle; }\n\np {\n  display: inline-block;\n  margin-bottom: 0;\n  vertical-align: middle; }\n\n/* ICON + BUTTON STYLE */\ni {\n  padding: 0 5px 0 5px;\n  transition: all .5s ease;\n  margin: 0 auto;\n  float: right;\n  vertical-align: middle; }\n\n.btn {\n  background-color: #345889;\n  color: #F7CB30;\n  border: 1px solid #F7CB30;\n  transition: all .5s ease; }\n  .btn:hover {\n    background-color: white;\n    border: 1px solid #345889;\n    color: #345889; }\n  .btn:focus, .btn:active {\n    outline: 0; }\n\n.pointers {\n  cursor: pointer; }\n", ""]);
+	exports.push([module.id, "body {\n  background-color: #345889;\n  font-family: \"Exo 2\", sans-serif; }\n\n.jumbotron {\n  background-color: #F7CB30;\n  background-size: cover;\n  background-attachment: fixed;\n  width: 100%;\n  height: 350px;\n  color: white;\n  text-align: center;\n  text-shadow: -2px 2px 6px black; }\n  .jumbotron h1 {\n    font-size: 5em; }\n  .jumbotron h3 {\n    padding-bottom: 30px;\n    border-bottom: 2px solid #345889; }\n\n#app {\n  background-color: #345889;\n  position: absolute;\n  width: 100%;\n  height: 100%; }\n\ninput {\n  margin: 10px 0px; }\n  input:focus {\n    box-shadow: 0 0 6px white; }\n\n.vidHolder {\n  box-shadow: 0px 0px 12px white;\n  padding: 0px;\n  width: 50%;\n  margin: auto; }\n\n.table {\n  width: 100%; }\n  .table thead tr th {\n    font-size: 1.3em;\n    color: white; }\n  .table td {\n    color: white;\n    vertical-align: middle; }\n\np {\n  display: inline-block;\n  margin-bottom: 0;\n  vertical-align: middle; }\n\n/* ICON + BUTTON STYLE */\ni {\n  padding: 0 5px 0 5px;\n  transition: all .5s ease;\n  margin: 0 auto;\n  float: right;\n  vertical-align: middle; }\n\n.btn {\n  background-color: #345889;\n  color: #F7CB30;\n  border: 1px solid #F7CB30;\n  transition: all .5s ease; }\n  .btn:hover {\n    background-color: white;\n    border: 1px solid #345889;\n    color: #345889; }\n  .btn:focus, .btn:active {\n    outline: 0; }\n\n.pointers {\n  cursor: pointer; }\n", ""]);
 	
 	// exports
 
